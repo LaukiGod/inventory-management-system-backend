@@ -15,6 +15,6 @@ export const supabase = createClient(supabaseUrl, supabaseServiceKey, {
     persistSession: false,
   },
   realtime: {
-    transport: WebSocket,
+    transport: WebSocket as any,
   },
 })
