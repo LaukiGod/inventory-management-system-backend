@@ -16,10 +16,11 @@ import { errorHandler } from './middleware/errorHandler'
 
 const app = express()
 const PORT = process.env.PORT ?? 3000
+const FRONTEND_URL = process.env.FRONTEND_URL ?? 'http://localhost:5173'
 
 // ── Middleware ────────────────────────────────────────────
 app.use(cors({
-  origin: process.env.FRONTEND_URL ?? 'http://localhost:5173',
+  origin: FRONTEND_URL,
   credentials: true,
 }))
 app.use(express.json())
@@ -50,7 +51,7 @@ app.use(errorHandler)
 
 // ── Start ─────────────────────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`✅ Inventory backend running on http://localhost:${PORT}`)
+  console.log(`✅ Inventory backend running on ${FRONTEND_URL}:${PORT}`)
 })
 
 export default app
