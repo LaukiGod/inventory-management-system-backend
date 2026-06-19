@@ -11,7 +11,6 @@ import logRoutes from './routes/logs.routes'
 import dashboardRoutes from './routes/dashboard.routes'
 import exportRoutes from './routes/export.routes'
 import uploadRoutes from './routes/upload.routes'
-import migrateRoutes from './routes/migrate.routes'
 
 import { errorHandler } from './middleware/errorHandler'
 
@@ -40,7 +39,6 @@ app.use('/logs', logRoutes)
 app.use('/dashboard', dashboardRoutes)
 app.use('/export', exportRoutes)
 app.use('/upload', uploadRoutes)
-app.use('/migrate', migrateRoutes)
 
 // ── 404 ───────────────────────────────────────────────────
 app.use((_req, res) => {
